@@ -1,0 +1,1896 @@
+{
+  "format": "cnc-step-app projekat",
+  "verzija": 1,
+  "snimljeno": "2026-10-31T21:30:18.288Z",
+  "projekat": {
+    "naziv": "",
+    "kupac": "",
+    "rok": "",
+    "napomena": "",
+    "kod": "portal-d-1-7d9rv"
+  },
+  "geometrija": "portal-d-1-7d9rv.glb",
+  "podesavanja": {
+    "version": 2,
+    "tools": {
+      "T1": {
+        "d": 5,
+        "dir": "side"
+      },
+      "T2": {
+        "d": 8,
+        "dir": "side"
+      },
+      "T3": {
+        "d": 5,
+        "dir": "top"
+      },
+      "T4": {
+        "d": 8,
+        "dir": "top"
+      }
+    },
+    "rightZeroEdges": {
+      "M601": false,
+      "M602": false,
+      "M603": false,
+      "M604": true
+    },
+    "edgeOrder": [
+      "M601",
+      "M602",
+      "M603",
+      "M604"
+    ],
+    "pocket": {
+      "tool": "T4",
+      "millFeed": 2000,
+      "stepZ": 6.5
+    },
+    "slot": {
+      "tool": "T4",
+      "millFeed": 2000
+    },
+    "lamello": {
+      "tool": "T2",
+      "feed": 5000
+    },
+    "feed": 5000,
+    "rapidFeed": 10000,
+    "rightZeros": [
+      1500,
+      2800
+    ],
+    "boards": [
+      18,
+      19
+    ],
+    "safeY": -10,
+    "safeZAbove": 10,
+    "fileName": "{broj}",
+    "fileNumber": {
+      "start": 1,
+      "digits": 3
+    },
+    "barcode": "name",
+    "plan": {
+      "dims": true,
+      "numbers": true,
+      "grid": false
+    },
+    "mergeIdentical": true,
+    "online": {
+      "url": "",
+      "customer": true,
+      "repo": "ognjenjokic/cnc-pregled",
+      "branch": "main"
+    }
+  },
+  "elementi": [
+    {
+      "id": "portal_D_1#0",
+      "naziv": "portal_D",
+      "putanja": [],
+      "fajl": "portal_D_1",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 1990,
+        "sirina": 100,
+        "debljina": 18
+      },
+      "materijal": "",
+      "dekor": "",
+      "kant": {
+        "M601": "",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "001",
+          "nc": "001.nc",
+          "orijentacija": {
+            "rot": 2,
+            "flip": true
+          },
+          "zaglavlje": {
+            "name": "portal_D",
+            "width": 1990,
+            "height": 100,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 125,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  125,
+                  91,
+                  6
+                ],
+                "b": [
+                  125,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 705,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  705,
+                  91,
+                  6
+                ],
+                "b": [
+                  705,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1285,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1285,
+                  91,
+                  6
+                ],
+                "b": [
+                  1285,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1865,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1865,
+                  91,
+                  6
+                ],
+                "b": [
+                  1865,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1940,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1940,
+                  91,
+                  6
+                ],
+                "b": [
+                  1940,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1575,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1575,
+                  91,
+                  6
+                ],
+                "b": [
+                  1575,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1360,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1360,
+                  91,
+                  6
+                ],
+                "b": [
+                  1360,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1210,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1210,
+                  91,
+                  6
+                ],
+                "b": [
+                  1210,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 995,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  995,
+                  91,
+                  6
+                ],
+                "b": [
+                  995,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 780,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  780,
+                  91,
+                  6
+                ],
+                "b": [
+                  780,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 630,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  630,
+                  91,
+                  6
+                ],
+                "b": [
+                  630,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 415,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  415,
+                  91,
+                  6
+                ],
+                "b": [
+                  415,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 50,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  50,
+                  91,
+                  6
+                ],
+                "b": [
+                  50,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "op": "slot",
+              "edge": "M602",
+              "x": 60,
+              "y": 3.6,
+              "x2": 60,
+              "y2": 26,
+              "z": 1,
+              "diameter": 16.7,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "rub",
+                "count": 3
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M602",
+              "x": 60,
+              "y": 3.6,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  1986.4,
+                  40,
+                  6
+                ],
+                "b": [
+                  1986.4,
+                  40,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M602",
+              "x": 60,
+              "y": 14.8,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  1975.2,
+                  40,
+                  6
+                ],
+                "b": [
+                  1975.2,
+                  40,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M602",
+              "x": 60,
+              "y": 26,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  1964,
+                  40,
+                  6
+                ],
+                "b": [
+                  1964,
+                  40,
+                  17
+                ],
+                "r": 7.5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "portal_D_k_1#0",
+      "naziv": "portal_D_k",
+      "putanja": [],
+      "fajl": "portal_D_k_1",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 65,
+        "sirina": 1990,
+        "debljina": 18
+      },
+      "materijal": "",
+      "dekor": "",
+      "kant": {
+        "M601": "",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "002",
+          "nc": "002.nc",
+          "orijentacija": {
+            "rot": 1,
+            "flip": true
+          },
+          "zaglavlje": {
+            "name": "portal_D_k",
+            "width": 65,
+            "height": 1990,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "op": "slot",
+              "edge": "M601",
+              "x": 25,
+              "y": 3.6,
+              "x2": 25,
+              "y2": 26,
+              "z": 1,
+              "diameter": 16.7,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "rub",
+                "count": 3
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M601",
+              "x": 25,
+              "y": 3.6,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  25,
+                  1986.4,
+                  6
+                ],
+                "b": [
+                  25,
+                  1986.4,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M601",
+              "x": 25,
+              "y": 14.8,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  25,
+                  1975.2,
+                  6
+                ],
+                "b": [
+                  25,
+                  1975.2,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M601",
+              "x": 25,
+              "y": 26,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  25,
+                  1964,
+                  6
+                ],
+                "b": [
+                  25,
+                  1964,
+                  17
+                ],
+                "r": 7.5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "portal_L_1#0",
+      "naziv": "portal_L",
+      "putanja": [],
+      "fajl": "portal_L_1",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 1990,
+        "sirina": 100,
+        "debljina": 18
+      },
+      "materijal": "",
+      "dekor": "",
+      "kant": {
+        "M601": "",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "003",
+          "nc": "003.nc",
+          "orijentacija": {
+            "rot": 0,
+            "flip": true
+          },
+          "zaglavlje": {
+            "name": "portal_L",
+            "width": 1990,
+            "height": 100,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 125,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  125,
+                  91,
+                  6
+                ],
+                "b": [
+                  125,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 705,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  705,
+                  91,
+                  6
+                ],
+                "b": [
+                  705,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1285,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1285,
+                  91,
+                  6
+                ],
+                "b": [
+                  1285,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1865,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1865,
+                  91,
+                  6
+                ],
+                "b": [
+                  1865,
+                  91,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1940,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1940,
+                  91,
+                  6
+                ],
+                "b": [
+                  1940,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1575,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1575,
+                  91,
+                  6
+                ],
+                "b": [
+                  1575,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1360,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1360,
+                  91,
+                  6
+                ],
+                "b": [
+                  1360,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1210,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1210,
+                  91,
+                  6
+                ],
+                "b": [
+                  1210,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 995,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  995,
+                  91,
+                  6
+                ],
+                "b": [
+                  995,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 780,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  780,
+                  91,
+                  6
+                ],
+                "b": [
+                  780,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 630,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  630,
+                  91,
+                  6
+                ],
+                "b": [
+                  630,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 415,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  415,
+                  91,
+                  6
+                ],
+                "b": [
+                  415,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 50,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  50,
+                  91,
+                  6
+                ],
+                "b": [
+                  50,
+                  91,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "op": "slot",
+              "edge": "M604",
+              "x": 60,
+              "y": 3.6,
+              "x2": 60,
+              "y2": 26,
+              "z": 1,
+              "diameter": 16.7,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "rub",
+                "count": 3
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 60,
+              "y": 3.6,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  3.6,
+                  40,
+                  6
+                ],
+                "b": [
+                  3.6,
+                  40,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 60,
+              "y": 14.8,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  14.8,
+                  40,
+                  6
+                ],
+                "b": [
+                  14.8,
+                  40,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 60,
+              "y": 26,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  26,
+                  40,
+                  6
+                ],
+                "b": [
+                  26,
+                  40,
+                  17
+                ],
+                "r": 7.5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "portal#0",
+      "naziv": "portal",
+      "putanja": [],
+      "fajl": "portal",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 1990,
+        "sirina": 300,
+        "debljina": 18
+      },
+      "materijal": "",
+      "dekor": "",
+      "kant": {
+        "M601": "",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "004",
+          "nc": "004.nc",
+          "orijentacija": {
+            "rot": 0,
+            "flip": true
+          },
+          "zaglavlje": {
+            "name": "portal",
+            "width": 1990,
+            "height": 300,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 125,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  125,
+                  291,
+                  6
+                ],
+                "b": [
+                  125,
+                  291,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 705,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  705,
+                  291,
+                  6
+                ],
+                "b": [
+                  705,
+                  291,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1285,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1285,
+                  291,
+                  6
+                ],
+                "b": [
+                  1285,
+                  291,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1865,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1865,
+                  291,
+                  6
+                ],
+                "b": [
+                  1865,
+                  291,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1940,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1940,
+                  291,
+                  6
+                ],
+                "b": [
+                  1940,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1575,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1575,
+                  291,
+                  6
+                ],
+                "b": [
+                  1575,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1360,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1360,
+                  291,
+                  6
+                ],
+                "b": [
+                  1360,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 1210,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  1210,
+                  291,
+                  6
+                ],
+                "b": [
+                  1210,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 995,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  995,
+                  291,
+                  6
+                ],
+                "b": [
+                  995,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 810,
+              "y": 150,
+              "z": 18,
+              "through": true,
+              "diameter": 60,
+              "op": "pocket",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  810,
+                  150,
+                  0
+                ],
+                "b": [
+                  810,
+                  150,
+                  18
+                ],
+                "r": 30
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 780,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  780,
+                  291,
+                  6
+                ],
+                "b": [
+                  780,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 630,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  630,
+                  291,
+                  6
+                ],
+                "b": [
+                  630,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 415,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  415,
+                  291,
+                  6
+                ],
+                "b": [
+                  415,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 50,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  50,
+                  291,
+                  6
+                ],
+                "b": [
+                  50,
+                  291,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "op": "slot",
+              "edge": "M604",
+              "x": 215,
+              "y": 3.6,
+              "x2": 215,
+              "y2": 26,
+              "z": 1,
+              "diameter": 16.7,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-1",
+                "part": "rub",
+                "count": 3
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 215,
+              "y": 3.6,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-1",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  3.6,
+                  85,
+                  6
+                ],
+                "b": [
+                  3.6,
+                  85,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 215,
+              "y": 14.8,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-1",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  14.8,
+                  85,
+                  6
+                ],
+                "b": [
+                  14.8,
+                  85,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 215,
+              "y": 26,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-1",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  26,
+                  85,
+                  6
+                ],
+                "b": [
+                  26,
+                  85,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "slot",
+              "edge": "M604",
+              "x": 85,
+              "y": 3.6,
+              "x2": 85,
+              "y2": 26,
+              "z": 1,
+              "diameter": 16.7,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "rub",
+                "count": 3
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 85,
+              "y": 3.6,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  3.6,
+                  215,
+                  6
+                ],
+                "b": [
+                  3.6,
+                  215,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 85,
+              "y": 14.8,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  14.8,
+                  215,
+                  6
+                ],
+                "b": [
+                  14.8,
+                  215,
+                  17
+                ],
+                "r": 7.5
+              }
+            },
+            {
+              "kind": "top",
+              "op": "pocket",
+              "edge": "M604",
+              "x": 85,
+              "y": 26,
+              "z": 12,
+              "diameter": 15,
+              "through": false,
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": true,
+              "group": {
+                "kind": "cabineo",
+                "id": "cabineo-0",
+                "part": "krug",
+                "count": 3
+              },
+              "local": {
+                "a": [
+                  26,
+                  215,
+                  6
+                ],
+                "b": [
+                  26,
+                  215,
+                  17
+                ],
+                "r": 7.5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
