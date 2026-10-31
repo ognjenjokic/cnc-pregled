@@ -9,9 +9,9 @@
     if (/[?&]p=/.test(location.search)) location.replace('pregled.html' + location.search);
   </script>
   <script src="./occt/occt-import-js.js"></script>
-  <script type="module" crossorigin src="./assets/main-e9sJhz9k.js"></script>
+  <script type="module" crossorigin src="./assets/main-Dj56lY5R.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/online-DWvvkfni.js">
-  <link rel="stylesheet" crossorigin href="./assets/main-BHMgyXJ4.css">
+  <link rel="stylesheet" crossorigin href="./assets/main-BDUAnF0f.css">
 </head>
 <body>
   <header>
@@ -173,7 +173,9 @@
         <div class="row tight">
           <label class="btn small" title="Izaberi folder sajt (napravi ga sa npm run sajt): aplikacija i online pregled idu na GitHub, objavljeni projekti ostaju">⬆ Postavi sajt<input id="ghSite" type="file" webkitdirectory multiple hidden /></label>
           <button id="ghForget" class="btn small" title="Obriši token iz ovog preglednika">Obriši token</button>
+          <button id="ghPublished" class="btn small" type="button" title="Projekti koji su na sajtu – otvori ili ukloni">Objavljeni projekti</button>
         </div>
+        <div id="ghPublishedList" class="published hidden"></div>
         <p class="hint">Sa adresom svaka daska u PDF-u dobije QR kod: telefon otvori 3D sklopa sa tom daskom obojenom, stablo elemenata i podatke.
           „🌐 Objavi” pošalje projekat na sajt (kod.json i kod.glb u projekti/), a „Snimi projekat” ih snimi i lokalno. Sajt je javan: ko ima link, vidi projekat.</p>
         <details class="howto">
