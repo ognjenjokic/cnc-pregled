@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex" />
+  <title>Online pregled · CNC Bušenje</title>
+  <script type="module" crossorigin src="./assets/pregled-D10qIk55.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/online-DWvvkfni.js">
+  <link rel="stylesheet" crossorigin href="./assets/pregled-SuxB4cNK.css">
+</head>
+<body>
+  <header class="top">
+    <div class="title"><b id="project">Online pregled</b><span id="element"></span></div>
+    <label class="btn" title="Otvori projekat sa računara: .json i .glb ili ZIP">Otvori<input id="file" type="file" accept=".json,.glb,.zip" multiple hidden /></label>
+  </header>
+  <main>
+    <section id="view" class="view">
+      <div class="modes">
+        <button data-mode="assembly" class="on" title="Cijeli sklop, izabrani element obojen">Sklop</button>
+        <button data-mode="board" title="Izabrana daska kako stoji na mašini, sa rupama">Daska</button>
+        <button id="focus" title="Uvećaj na izabrani element">🎯</button>
+        <button id="all" title="Cijeli sklop">⤢</button>
+      </div>
+      <div id="message" class="message">Učitavam…</div>
+    </section>
+    <nav class="tabs">
+      <button data-tab="data" class="on">Podaci</button>
+      <button data-tab="plan">Crtež</button>
+      <button data-tab="tree" class="treetab">Elementi</button>
+    </nav>
+    <section id="tab-data" class="panel"></section>
+    <section id="tab-plan" class="panel hidden">
+      <div id="programs" class="chips"></div>
+      <div id="plan" class="plan"></div>
+      <div id="planInfo" class="hint">Klikni operaciju na crtežu. Prevuci: pomjeranje · dupli klik: cijela daska.</div>
+    </section>
+    <section id="tab-tree" class="panel tree hidden"></section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,1074 @@
+{
+  "format": "cnc-step-app projekat",
+  "verzija": 1,
+  "snimljeno": "2026-10-31T11:00:00.000Z",
+  "projekat": {
+    "naziv": "Primjer – ormar",
+    "kupac": "",
+    "rok": "2026-11-15",
+    "napomena": "",
+    "kod": "primjer"
+  },
+  "geometrija": "primjer.glb",
+  "podesavanja": {
+    "version": 2,
+    "tools": {
+      "T1": {
+        "d": 5,
+        "dir": "side"
+      },
+      "T2": {
+        "d": 8,
+        "dir": "side"
+      },
+      "T3": {
+        "d": 5,
+        "dir": "top"
+      },
+      "T4": {
+        "d": 8,
+        "dir": "top"
+      }
+    },
+    "rightZeroEdges": {
+      "M601": false,
+      "M602": false,
+      "M603": false,
+      "M604": true
+    },
+    "edgeOrder": [
+      "M601",
+      "M602",
+      "M603",
+      "M604"
+    ],
+    "pocket": {
+      "tool": "T4",
+      "millFeed": 2000,
+      "stepZ": 6.5
+    },
+    "slot": {
+      "tool": "T4",
+      "millFeed": 2000
+    },
+    "lamello": {
+      "tool": "T2",
+      "feed": 5000
+    },
+    "feed": 5000,
+    "rapidFeed": 10000,
+    "rightZeros": [
+      1500,
+      2800
+    ],
+    "boards": [
+      18,
+      19
+    ],
+    "safeY": -10,
+    "safeZAbove": 10,
+    "fileName": "{broj}",
+    "fileNumber": {
+      "start": 1,
+      "digits": 3
+    },
+    "barcode": "name",
+    "plan": {
+      "dims": true,
+      "numbers": true,
+      "grid": false
+    },
+    "mergeIdentical": true,
+    "online": {
+      "url": "",
+      "customer": false
+    }
+  },
+  "elementi": [
+    {
+      "id": "ormar_sklop#0",
+      "naziv": "Bok lijevi",
+      "putanja": [
+        "Ormar",
+        "Korpus"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 720,
+        "sirina": 560,
+        "debljina": 18
+      },
+      "materijal": "Iverica 18",
+      "dekor": "Egger W1000 bijela",
+      "kant": {
+        "M601": "ABS 2 mm",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "001",
+          "nc": "001.nc",
+          "orijentacija": {
+            "rot": 0,
+            "flip": false
+          },
+          "zaglavlje": {
+            "name": "Bok lijevi",
+            "width": 720,
+            "height": 560,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 200,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  200,
+                  523,
+                  6
+                ],
+                "b": [
+                  200,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 232,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  232,
+                  523,
+                  6
+                ],
+                "b": [
+                  232,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 264,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  264,
+                  523,
+                  6
+                ],
+                "b": [
+                  264,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 296,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  296,
+                  523,
+                  6
+                ],
+                "b": [
+                  296,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 500,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  500,
+                  523,
+                  6
+                ],
+                "b": [
+                  500,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 520,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  200,
+                  37,
+                  6
+                ],
+                "b": [
+                  200,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 488,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  232,
+                  37,
+                  6
+                ],
+                "b": [
+                  232,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 456,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  264,
+                  37,
+                  6
+                ],
+                "b": [
+                  264,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 424,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  296,
+                  37,
+                  6
+                ],
+                "b": [
+                  296,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 220,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  500,
+                  37,
+                  6
+                ],
+                "b": [
+                  500,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ormar_sklop#1",
+      "naziv": "Bok desni",
+      "putanja": [
+        "Ormar",
+        "Korpus"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 720,
+        "sirina": 560,
+        "debljina": 18
+      },
+      "materijal": "Iverica 18",
+      "dekor": "Egger W1000 bijela",
+      "kant": {
+        "M601": "",
+        "M602": "",
+        "M603": "ABS 2 mm",
+        "M604": ""
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": "ormar_sklop#0",
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "001",
+          "nc": "001.nc",
+          "orijentacija": {
+            "rot": 2,
+            "flip": true
+          },
+          "zaglavlje": {
+            "name": "Bok desni",
+            "width": 720,
+            "height": 560,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 200,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  200,
+                  523,
+                  6
+                ],
+                "b": [
+                  200,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 232,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  232,
+                  523,
+                  6
+                ],
+                "b": [
+                  232,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 264,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  264,
+                  523,
+                  6
+                ],
+                "b": [
+                  264,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 296,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  296,
+                  523,
+                  6
+                ],
+                "b": [
+                  296,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 500,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  500,
+                  523,
+                  6
+                ],
+                "b": [
+                  500,
+                  523,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 520,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  200,
+                  37,
+                  6
+                ],
+                "b": [
+                  200,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 488,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  232,
+                  37,
+                  6
+                ],
+                "b": [
+                  232,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 456,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  264,
+                  37,
+                  6
+                ],
+                "b": [
+                  264,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 424,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  296,
+                  37,
+                  6
+                ],
+                "b": [
+                  296,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 220,
+              "y": 37,
+              "z": 12,
+              "through": false,
+              "diameter": 5,
+              "op": "drill",
+              "tool": "T3",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  500,
+                  37,
+                  6
+                ],
+                "b": [
+                  500,
+                  37,
+                  18
+                ],
+                "r": 2.5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ormar_sklop#2",
+      "naziv": "Dno",
+      "putanja": [
+        "Ormar",
+        "Korpus"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 560,
+        "sirina": 564,
+        "debljina": 18
+      },
+      "materijal": "Iverica 18",
+      "dekor": "Egger W1000 bijela",
+      "kant": {
+        "M601": "",
+        "M602": "",
+        "M603": "",
+        "M604": "ABS 2 mm"
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "002",
+          "nc": "002.nc",
+          "orijentacija": {
+            "rot": 1,
+            "flip": false
+          },
+          "zaglavlje": {
+            "name": "Dno",
+            "width": 560,
+            "height": 564,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 510,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  510,
+                  555,
+                  6
+                ],
+                "b": [
+                  510,
+                  555,
+                  18
+                ],
+                "r": 4
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M603",
+              "x": 50,
+              "y": 9,
+              "z": 12,
+              "through": false,
+              "diameter": 8,
+              "op": "drill",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  510,
+                  9,
+                  6
+                ],
+                "b": [
+                  510,
+                  9,
+                  18
+                ],
+                "r": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ormar_sklop#3",
+      "naziv": "Krov",
+      "putanja": [
+        "Ormar",
+        "Korpus"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 564,
+        "sirina": 560,
+        "debljina": 18
+      },
+      "materijal": "Iverica 18",
+      "dekor": "Egger W1000 bijela",
+      "kant": {
+        "M601": "ABS 2 mm",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "003",
+          "nc": "003.nc",
+          "orijentacija": {
+            "rot": 0,
+            "flip": false
+          },
+          "zaglavlje": {
+            "name": "Krov",
+            "width": 564,
+            "height": 560,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": []
+        }
+      ]
+    },
+    {
+      "id": "ormar_sklop#4",
+      "naziv": "Polica",
+      "putanja": [
+        "Ormar",
+        "Korpus"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 562,
+        "sirina": 540,
+        "debljina": 18
+      },
+      "materijal": "Iverica 18",
+      "dekor": "Egger W1000 bijela",
+      "kant": {
+        "M601": "ABS 2 mm",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "004",
+          "nc": "004.nc",
+          "orijentacija": {
+            "rot": 0,
+            "flip": false
+          },
+          "zaglavlje": {
+            "name": "Polica",
+            "width": 562,
+            "height": 540,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": []
+        }
+      ]
+    },
+    {
+      "id": "ormar_sklop#5",
+      "naziv": "Polica (2)",
+      "putanja": [
+        "Ormar",
+        "Korpus"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 562,
+        "sirina": 540,
+        "debljina": 18
+      },
+      "materijal": "Iverica 18",
+      "dekor": "Egger W1000 bijela",
+      "kant": {
+        "M601": "ABS 2 mm",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": "ormar_sklop#4",
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "004",
+          "nc": "004.nc",
+          "orijentacija": {
+            "rot": 0,
+            "flip": false
+          },
+          "zaglavlje": {
+            "name": "Polica (2)",
+            "width": 562,
+            "height": 540,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": []
+        }
+      ]
+    },
+    {
+      "id": "ormar_sklop#6",
+      "naziv": "Vrata lijeva",
+      "putanja": [
+        "Ormar",
+        "Vrata"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": true,
+      "rucno": false,
+      "mjere": {
+        "duzina": 716,
+        "sirina": 596,
+        "debljina": 18
+      },
+      "materijal": "MDF 18",
+      "dekor": "Bijela mat",
+      "kant": {
+        "M601": "ABS 1 mm",
+        "M602": "ABS 1 mm",
+        "M603": "ABS 1 mm",
+        "M604": "ABS 1 mm"
+      },
+      "smjer_godova": "duzina",
+      "kolicina": 1,
+      "napomena": "Šarke Ø35 sa unutrašnje strane, prvo probna rupa.",
+      "isti_kao": null,
+      "programi": [
+        {
+          "strana": "A",
+          "broj": "005",
+          "nc": "005.nc",
+          "orijentacija": {
+            "rot": 2,
+            "flip": false
+          },
+          "zaglavlje": {
+            "name": "Vrata lijeva",
+            "width": 716,
+            "height": 596,
+            "thickness": 18,
+            "rightZero": 1500
+          },
+          "redovi": [
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 98,
+              "y": 22.5,
+              "z": 12.5,
+              "through": false,
+              "diameter": 35,
+              "op": "pocket",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  98,
+                  573.5,
+                  5.5
+                ],
+                "b": [
+                  98,
+                  573.5,
+                  18
+                ],
+                "r": 17.5
+              }
+            },
+            {
+              "kind": "top",
+              "edge": "M601",
+              "x": 618,
+              "y": 22.5,
+              "z": 12.5,
+              "through": false,
+              "diameter": 35,
+              "op": "pocket",
+              "tool": "T4",
+              "feed": 5000,
+              "rightZero": false,
+              "local": {
+                "a": [
+                  618,
+                  573.5,
+                  5.5
+                ],
+                "b": [
+                  618,
+                  573.5,
+                  18
+                ],
+                "r": 17.5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ormar_sklop#7",
+      "naziv": "Sarka",
+      "putanja": [
+        "Ormar"
+      ],
+      "fajl": "ormar_sklop",
+      "daska": false,
+      "rucno": false,
+      "mjere": {
+        "duzina": 35,
+        "sirina": 34.745,
+        "debljina": 12
+      },
+      "materijal": "",
+      "dekor": "",
+      "kant": {
+        "M601": "",
+        "M602": "",
+        "M603": "",
+        "M604": ""
+      },
+      "smjer_godova": "",
+      "kolicina": 1,
+      "napomena": "",
+      "isti_kao": null,
+      "programi": []
+    }
+  ]
+}

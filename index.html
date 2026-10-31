@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CNC Bušenje</title>
+  <script>
+    // QR kod iz PDF-a sa adresom sajta (…/?p=kod&e=element) -> online pregled
+    if (/[?&]p=/.test(location.search)) location.replace('pregled.html' + location.search);
+  </script>
+  <script src="./occt/occt-import-js.js"></script>
+  <script type="module" crossorigin src="./assets/main-e9sJhz9k.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/online-DWvvkfni.js">
+  <link rel="stylesheet" crossorigin href="./assets/main-BHMgyXJ4.css">
+</head>
+<body>
+  <header>
+    <h1>CNC Bušenje <span>STEP → G-code</span></h1>
+    <label class="btn primary">Učitaj STEP<input id="file" type="file" accept=".step,.stp" multiple hidden /></label>
+    <button id="saveProject" class="btn" title="U izabrani folder: .json (podaci, stablo, operacije, podešavanja), .glb (3D sklopa), PDF izvještaj i svi programi u nc/">💾 Snimi projekat</button>
+    <label class="btn" title="Otvori .json projekta (zajedno sa .glb za 3D) ili ZIP projekta">📂 Otvori projekat<input id="openProject" type="file" accept=".json,.glb,.zip" multiple hidden /></label>
+    <button id="report" class="btn" title="Sve učitane daske: ime .nc fajla, dimenzije, strane, skica sa kotama i barkod za skener, 4 po A4 strani">📄 PDF izvještaj</button>
+    <button id="publish" class="btn" title="Projekat na sajt online pregleda (GitHub Pages) jednim klikom – QR kodovi iz PDF-a vode tamo">🌐 Objavi</button>
+    <button id="settingsOpen" class="btn" title="Alati, feed, glodanje, ivice, ime .nc fajla">⚙ Podešavanja</button>
+    <span id="status">Prevuci jedan ili više STEP fajlova ovdje ili klikni „Učitaj STEP”.</span>
+  </header>
+
+  <main>
+    <aside>
+      <details class="box" id="projectBox">
+        <summary>Projekat <small id="projectName"></small></summary>
+        <div class="grid2">
+          <label>Projekt<input data-h="project" /></label>
+          <label>Kupac<input data-i="customer" /></label>
+          <label>Rok<input data-i="deadline" type="date" /></label>
+        </div>
+        <label>Napomena<textarea data-i="notes" rows="2"></textarea></label>
+        <p id="onlineInfo" class="hint"></p>
+      </details>
+
+      <section id="treeBox" class="box">
+        <div class="boxhead">
+          <h2 id="treeTitle">Elementi</h2>
+          <button id="newBoard" class="btn small" title="Daska bez STEP-a: upiši mjere, operacije dodaješ u tabeli">+ Nova daska</button>
+        </div>
+        <form id="newBoardForm" class="hidden">
+          <div class="grid3">
+            <label>Naziv<input name="name" placeholder="npr. Polica" /></label>
+            <label>Materijal<input name="material" placeholder="Iverica 18" /></label>
+            <label>Komada<input name="qty" type="number" min="1" step="1" value="1" /></label>
+            <label>Širina<input name="w" type="number" step="0.1" value="600" /></label>
+            <label>Visina<input name="h" type="number" step="0.1" value="400" /></label>
+            <label>Debljina<input name="t" type="number" step="0.1" value="18" /></label>
+          </div>
+          <div class="row tight"><button class="btn primary small" type="submit">Napravi</button><button class="btn small" type="button" id="newBoardCancel">Odustani</button></div>
+        </form>
+        <div id="panels" class="tree"><p class="hint">Učitaj STEP (sklop ili dio) ili napravi novu dasku.</p></div>
+      </section>
+
+      <details id="elementBox" class="box hidden" open>
+        <summary>Element <small id="elementName"></small></summary>
+        <label>Naziv elementa<input data-e="name" /></label>
+        <label class="check"><input type="checkbox" data-e="isBoard" /> daska (pravi se NC program)</label>
+        <div class="grid2">
+          <label>Materijal<input data-e="material" placeholder="npr. Iverica 18" /></label>
+          <label>Dekor<input data-e="decor" placeholder="npr. Egger H1145" /></label>
+          <label>Količina<input data-e="qty" type="number" min="1" step="1" /></label>
+          <label>Smjer godova<select data-e="grain"><option value="">bez</option><option value="duzina">po dužini</option><option value="sirina">po širini</option></select></label>
+        </div>
+        <div class="kant" id="kant"></div>
+        <label>Napomena<textarea data-e="notes" rows="2"></textarea></label>
+        <p id="sameAs" class="hint"></p>
+        <p id="onlineLink" class="hint"></p>
+        <div class="row tight">
+          <button id="dupPart" class="btn small" title="Ista daska još jednom (sa operacijama)">Kopiraj dasku</button>
+          <button id="delPart" class="btn small" title="Obriši ručno napravljenu dasku">Obriši</button>
+        </div>
+      </details>
+
+      <details id="programBox" class="box" open>
+        <summary>Program na mašini</summary>
+        <div class="grid3">
+          <label>Naziv<input data-h="name" /></label>
+          <label>Right zero<select data-h="rightZero" data-num></select></label>
+          <label>Safe Z <small id="safeZAuto">auto</small><input data-h="safeZ" type="number" step="0.5" title="Debljina + 10; upiši više ako treba, prazno = opet automatski" /></label>
+          <label>Širina<input data-h="width" type="number" step="0.1" /></label>
+          <label>Visina<input data-h="height" type="number" step="0.1" /></label>
+          <label>Debljina<input data-h="thickness" type="number" step="0.1" /></label>
+        </div>
+      </details>
+
+      <div id="warnings"></div>
+    </aside>
+
+    <div id="settingsPanel" class="drawer hidden" aria-label="Podešavanja mašine">
+      <div class="drawerhead"><h2>Podešavanja mašine</h2><button id="settingsClose" class="btn small" title="Zatvori (Esc)">✕</button></div>
+      <p class="hint">Snimaju se i u projekat; kad otvoriš projekat, vrate se njegova podešavanja.</p>
+
+      <section>
+        <h2>Alati (fiksni motori)</h2>
+        <table class="tools">
+          <thead><tr><th>Alat</th><th>Smjer</th><th>Ø mm</th></tr></thead>
+          <tbody id="tools"></tbody>
+        </table>
+        <div class="grid3">
+          <label>Feed<input data-s="feed" type="number" /></label>
+          <label>G00 feed<input data-s="rapidFeed" type="number" title="F na svakom G00 redu; 0 = bez F" /></label>
+          <label>Safe Y<input data-s="safeY" type="number" /></label>
+        </div>
+        <label>Ploče (mm)<input id="boards" placeholder="prazno = bez provjere debljine" /></label>
+      </section>
+
+      <section>
+        <h2>Kružno glodanje</h2>
+        <p class="hint">Vertikalne rupe veće od svih svrdala (npr. Ø35 šarke, Ø60) glodaju se kružno.</p>
+        <div class="grid3">
+          <label>Alat<select data-p="tool"><option>T3</option><option>T4</option></select></label>
+          <label>Feed glodanja<input data-p="millFeed" type="number" /></label>
+          <label>Dubina po prolazu<input data-p="stepZ" type="number" step="0.5" /></label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Slot rupe i lamello</h2>
+        <p class="hint">Slot: glodalo uranja do pune dubine i rubom ide po zidu. Lamello: bočni alat po luku od x do x2.</p>
+        <div class="grid2">
+          <label>Slot alat<select data-c="tool"><option>T3</option><option>T4</option></select></label>
+          <label>Slot feed<input data-c="millFeed" type="number" /></label>
+          <label>Lamello alat<select data-l="tool"><option>T1</option><option>T2</option></select></label>
+          <label>Lamello feed<input data-l="feed" type="number" /></label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ivice</h2>
+        <div id="edges" class="edges"></div>
+        <label>Redoslijed ivica<input id="edgeOrder" /></label>
+      </section>
+
+      <section>
+        <h2>Ime .nc fajla</h2>
+        <div class="row">
+          <input id="fileNameFormat" class="grow" spellcheck="false" />
+          <button id="fileNameReset" class="btn" title="Vrati podrazumijevani format: samo broj">↺</button>
+        </div>
+        <div class="row">
+          <button class="btn small" data-fmt="number" title="001.nc, 002.nc… redom kao u listi dasaka">samo broj</button>
+          <button class="btn small" data-fmt="sheets" title="Projekt_Naziv_ŠxVxD_datum_vrijeme, kao Google Sheets skripta">puno ime</button>
+        </div>
+        <div class="grid3">
+          <label>Prvi broj<input data-n="start" type="number" min="0" step="1" title="Npr. 101 da nastaviš numeraciju od prošlog puta" /></label>
+          <label>Cifara<input data-n="digits" type="number" min="1" max="8" step="1" title="3 -> 001, 002…" /></label>
+          <label>Barkod u PDF<select id="barcode" title="Code 128: skener „otkuca” ovaj tekst pa Enter">
+            <option value="name">ime (001)</option>
+            <option value="file">sa .nc (001.nc)</option>
+            <option value="none">bez barkoda</option>
+          </select></label>
+        </div>
+        <label class="check"><input type="checkbox" id="mergeSame" /> isti komadi (isti NC kod, npr. ista polica u dva sklopa) dobiju jedan program; u PDF-u piše koliko puta se radi</label>
+        <p class="hint">Polja: {broj} {projekt} {naziv} {sirina} {visina} {debljina} {datum} {vrijeme} {fajl}. {broj} ide redom kroz sve programe, isti je u PDF izvještaju.</p>
+        <p class="hint">Sada: <b id="fnamePreview"></b></p>
+      </section>
+      <section class="box">
+        <h2>Online pregled (QR kod u PDF-u)</h2>
+        <div class="grid3">
+          <label class="span2">GitHub repozitorij<input id="ghRepo" placeholder="ime/cnc-pregled" autocomplete="off" spellcheck="false" /></label>
+          <label>Grana<input id="ghBranch" placeholder="main" autocomplete="off" spellcheck="false" /></label>
+        </div>
+        <label>Token (fine-grained, samo taj repozitorij)<input id="ghToken" type="password" placeholder="github_pat_…" autocomplete="off" spellcheck="false" /></label>
+        <p class="hint" id="ghTokenInfo"></p>
+        <label>Adresa sajta<input id="onlineUrl" placeholder="sama se popuni iz repozitorija" /></label>
+        <label class="check"><input type="checkbox" id="onlineCustomer" /> kupac i napomena projekta vidljivi online</label>
+        <div class="row tight">
+          <label class="btn small" title="Izaberi folder sajt (napravi ga sa npm run sajt): aplikacija i online pregled idu na GitHub, objavljeni projekti ostaju">⬆ Postavi sajt<input id="ghSite" type="file" webkitdirectory multiple hidden /></label>
+          <button id="ghForget" class="btn small" title="Obriši token iz ovog preglednika">Obriši token</button>
+        </div>
+        <p class="hint">Sa adresom svaka daska u PDF-u dobije QR kod: telefon otvori 3D sklopa sa tom daskom obojenom, stablo elemenata i podatke.
+          „🌐 Objavi” pošalje projekat na sajt (kod.json i kod.glb u projekti/), a „Snimi projekat” ih snimi i lokalno. Sajt je javan: ko ima link, vidi projekat.</p>
+        <details class="howto">
+          <summary>Kako postaviti GitHub Pages (jednom)</summary>
+          <ol>
+            <li>Na <a href="https://github.com/new" target="_blank">github.com/new</a> napravi repozitorij: ime npr. <b>cnc-pregled</b>, <b>Public</b>, uključi „Add a README file”.</li>
+            <li>Token: <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">novi fine-grained token</a> – Repository access: <b>Only select repositories</b> → cnc-pregled;
+              Permissions: <b>Contents: Read and write</b> i <b>Pages: Read and write</b>. Kopiraj token i zalijepi ga gore (čuva se samo u ovom pregledniku, ne ide u projekat).</li>
+            <li>U terminalu <code>npm run sajt</code>, pa ovdje „⬆ Postavi sajt” i izaberi folder <b>sajt</b>.</li>
+            <li>Za par minuta proba: adresa sajta + <code>?p=primjer</code>. Poslije toga za svaki projekat samo „🌐 Objavi”.</li>
+          </ol>
+        </details>
+      </section>
+    </div>
+
+    <div class="work">
+      <div id="viewer">
+        <div class="empty">Ovdje će biti 3D prikaz daske</div>
+        <div class="viewmode">
+          <button data-mode="board" class="on" title="Izabrana daska, okrenuta kao na mašini">Daska</button>
+          <button data-mode="assembly" title="Cijeli sklop, izabrani element obojen">Sklop</button>
+          <button data-mode="fit" title="Cijeli sklop u prikazu">⤢</button>
+          <span class="sep boardonly"></span>
+          <button id="rot" class="boardonly" title="Okreni dasku za 90° (M601 je gornja ivica u 2D pregledu)">⟳ 90°</button>
+          <button id="flip" class="boardonly" title="Preokreni dasku: druga površina gore (strana A)">⇅ Preokreni</button>
+        </div>
+      </div>
+      <div id="split" class="split" title="Prevuci gore/dolje: visina 3D prikaza (dupli klik vraća)"></div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="ops">Operacije <span id="count"></span></button>
+        <button class="tab" data-tab="plan">2D pregled</button>
+        <button class="tab" data-tab="nc">NC kod</button>
+      </div>
+
+      <div class="panel" id="tab-ops">
+        <div class="row">
+          <button id="add" class="btn">+ Dodaj red</button>
+          <button id="sort" class="btn">Sortiraj</button>
+          <button id="redetect" class="btn">Ponovo prepoznaj iz STEP-a</button>
+          <button id="tsv" class="btn">Kopiraj za Google Sheets</button>
+        </div>
+        <div class="scroll">
+          <table class="ops">
+            <thead><tr><th>#</th><th>Operacija</th><th>Alat</th><th>Ivica</th><th>Feed</th><th>x</th><th>y</th><th>z</th><th>Right zero</th><th>Ø / utor</th><th></th></tr></thead>
+            <tbody id="ops"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel hidden" id="tab-plan">
+        <div class="row plan-bar">
+          <button id="planFit" class="btn" title="Cijela daska (ili dupli klik na crtež)">⤢ Cijela daska</button>
+          <button id="planIn" class="btn" title="Uvećaj (točkić miša)">+</button>
+          <button id="planOut" class="btn" title="Umanji (točkić miša)">−</button>
+          <button id="planBig" class="btn" title="Sakrij 3D prikaz da 2D crtež bude veći (Esc vraća)">⛶ Veći crtež</button>
+          <label class="check"><input type="checkbox" data-plan="dims" /> kote</label>
+          <label class="check"><input type="checkbox" data-plan="numbers" /> brojevi redova</label>
+          <label class="check"><input type="checkbox" data-plan="grid" /> mreža</label>
+          <span id="planName" class="hint"></span>
+        </div>
+        <div id="plan" class="plan"></div>
+        <div id="planInfo" class="hint"></div>
+        <div class="legend">
+          <span><svg viewBox="-8 -8 16 16"><circle r="5" fill="#6b7280" /></svg>rupa odozgo</span>
+          <span><svg viewBox="-8 -8 16 16"><circle r="5" fill="#fff" stroke="#6b7280" stroke-width="1.6" /><path d="M-3.5 0H3.5M0 -3.5V3.5" stroke="#6b7280" /></svg>prolazna</span>
+          <span><svg viewBox="-8 -8 16 16"><circle r="3.5" fill="#6b7280" /><circle r="6.5" fill="none" stroke="#6b7280" /></svg>upuštena</span>
+          <span><svg viewBox="-8 -8 16 16"><circle r="6" fill="#6b7280" fill-opacity=".22" stroke="#6b7280" stroke-width="1.4" /></svg>kružno glodanje</span>
+          <span><svg viewBox="-12 -8 24 16"><path d="M-6 -4.5H6A4.5 4.5 0 0 1 6 4.5H-6A4.5 4.5 0 0 1 -6 -4.5Z" fill="#6b7280" fill-opacity=".22" stroke="#6b7280" stroke-width="1.4" /></svg>slot</span>
+          <span><svg viewBox="-12 -8 24 16"><path d="M-11 -4L-5 0L-11 4Z" fill="#6b7280" /><rect x="-5" y="-3.5" width="16" height="7" fill="#6b7280" fill-opacity=".14" stroke="#6b7280" stroke-dasharray="3 2" /></svg>bočna rupa (u ivici)</span>
+          <span><svg viewBox="-12 -8 24 16"><path d="M-10 -5Q0 9 10 -5Z" fill="#6b7280" fill-opacity=".35" stroke="#6b7280" /></svg>lamello</span>
+          <span><svg viewBox="-8 -8 16 16"><path d="M-4 -5V5L5 0Z" fill="#6b7280" /></svg>x = 0 na ivici</span>
+          <span><svg viewBox="-12 -8 24 16"><rect x="-11" y="-6" width="22" height="12" fill="#ecdcbf" stroke="#6b5536" /><rect x="-5" y="-3" width="10" height="6" fill="#b89a74" stroke="#6b5536" /></svg>dublje = tamnije (iz STEP-a)</span>
+          <span><svg viewBox="-12 -8 24 16"><path d="M-10 4H10M-10 -4H10" stroke="#6b5536" stroke-dasharray="3 2" /></svg>s donje strane (ne vidi se odozgo)</span>
+          <span><svg viewBox="-8 -8 16 16"><circle r="5" fill="#dc2626" stroke="#dc2626" stroke-dasharray="3 2" /></svg>bez alata (ne ide u NC)</span>
+        </div>
+      </div>
+
+      <div class="panel hidden" id="tab-nc">
+        <div class="row">
+          <button id="download" class="btn primary">⬇ Preuzmi .nc</button>
+          <button id="downloadAll" class="btn hidden" title="Svi programi u jednom ZIP fajlu">⬇ Sve daske (.zip)</button>
+          <button id="saveFolder" class="btn hidden" title="Svi .nc fajlovi direktno u folder koji izabereš (npr. USB)">📁 Sve u folder…</button>
+          <button id="copy" class="btn">Kopiraj</button>
+          <span id="fname" class="hint"></span>
+        </div>
+        <pre id="nc"></pre>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+Online pregled – sajt (GitHub Pages)
+====================================
+
+Ovaj folder je cijeli sajt: aplikacija (index.html), online pregled (pregled.html) i projekti/.
+
+Jednom:
+  1. https://github.com/new – repozitorij npr. cnc-pregled, Public, uključi „Add a README file”.
+  2. https://github.com/settings/personal-access-tokens/new – fine-grained token:
+     Repository access: Only select repositories -> cnc-pregled
+     Permissions: Contents: Read and write, Pages: Read and write
+  3. U aplikaciji: Podešavanja -> Online pregled: repozitorij (ime/cnc-pregled) i token.
+  4. „⬆ Postavi sajt” i izaberi OVAJ folder. Aplikacija uključi GitHub Pages
+     (ako ne može: repozitorij -> Settings -> Pages -> Branch: main, / (root) -> Save).
+  5. Za par minuta: https://ime.github.io/cnc-pregled/?p=primjer
+
+Svaki projekat: „🌐 Objavi” u aplikaciji (projekti/kod.json i kod.glb idu na sajt za oko minut).
+Nova verzija aplikacije: npm run sajt, pa opet „⬆ Postavi sajt” (objavljeni projekti ostaju).
+
+Pažnja: sajt je javan – ko ima link (QR kod), vidi projekat. Kupac i napomena projekta se ne
+objavljuju, osim ako to uključiš u podešavanjima. Token je samo u pregledniku, ne ide na sajt.
